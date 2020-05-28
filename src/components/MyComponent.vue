@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- Interpolación de texto -->
         <h2>{{myText}}</h2>
         <button v-on:click="shouldShow = !shouldShow">
             Cambiar visibilidad</button>
