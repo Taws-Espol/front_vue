@@ -4,6 +4,7 @@
             <img v-bind:src="imgUrl" />
             <h2>Nombre: {{name}}</h2>
             <h2>Telefono: {{phone}}</h2>
+            <button v-on:click="emitEvent">Felicitar</button>
         </div>
     </div>
 </template>
@@ -19,6 +20,11 @@ export default {
         return {
             name: this.userModel.name.first,
             phone: this.userModel.phone
+        }
+    },
+    methods: {
+        emitEvent: function(){
+            this.$emit('felicitar', this.name)
         }
     }
 }

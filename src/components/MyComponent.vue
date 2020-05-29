@@ -40,8 +40,11 @@
             Fotos pasadas al componente!
         </h2>
         <button v-on:click="fetchProfiles">Descargar fotos</button>
+        <h2 v-if="felicitarUser != null">
+            Felicitaciones a {{felicitarUser}}
+        </h2>
         <div class="user-profiles">
-            <user-component v-for="user in fetchedUsers" v-bind:imgUrl="user.picture.large" v-bind:userModel="user" :key="user.email"></user-component>
+            <user-component v-for="user in fetchedUsers" v-on:felicitar="onFelicitar" v-bind:imgUrl="user.picture.large" v-bind:userModel="user" :key="user.email"></user-component>
         </div>
     </div>
 </template>
@@ -61,7 +64,8 @@ export default {
             listItems: [
                 1,2,3,4
             ],
-            fetchedUsers: []
+            fetchedUsers: [],
+            felicitarUser: null
         }
     },
     methods: {
@@ -76,7 +80,10 @@ export default {
             console.log(data);
             this.fetchedUsers = data['results'];
         },
-    }
+        onFelicitar: function(event){
+            this.felicitarUser = event
+        }
+    },
 
 }
 </script>
