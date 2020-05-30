@@ -1,4 +1,8 @@
 # taller_vue
+## Slides 
+
+[Vue.js slides](https://docs.google.com/presentation/d/1lS01zFobFUxhbBVX3K32kMMyOG0c68f8QnjcRkMttxs/edit?usp=sharing)
+
 
 ## Project setup
 ```
