@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Peras",
+    "price": 2.57,
+    "photo": "./pear.png",
+    "stock": 20
+  },
+  {
+    "id": 2,
+    "name": "Manzanas",
+    "price": 1.83,
+    "photo": "./Single_apple.png",
+    "stock": 20
+  },
+  {
+    "id": 3,
+    "name": "Papayas",
+    "price": 2.54,
+    "photo": "./papaya.png",
+    "stock": 20
+  },
+  {
+    "id": 4,
+    "name": "Aguacates",
+    "price": 3.54,
+    "photo": "./aguacate.png",
+    "stock": 20
+  },
+  {
+    "id": 5,
+    "name": "Bananas",
+    "price": 1.25,
+    "photo": "./bananas.png",
+    "stock": 20
+  },
+  {
+    "id": 6,
+    "name": "Verdes",
+    "price": 1.85,
+    "photo": "./verde.png",
+    "stock": 20
+  },
+  {
+    "id": 7,
+    "name": "Maduros",
+    "price": 1.5,
+    "photo": "./bananas.png",
+    "stock": 20
+  },
+  {
+    "id": 8,
+    "name": "Piñas",
+    "price": 3.5,
+    "photo": "./pina.png",
+    "stock": 20
+  }
+]

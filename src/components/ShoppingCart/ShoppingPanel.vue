@@ -2,7 +2,11 @@
     <div class="container-fluid">
         <div class="container" >
             <h2>Items en stock</h2>
-            <button class="btn btn-dark" v-on:click="toggleSortingOrder">Ordenar por precio</button>
+            <div class="form-inline">
+                <label class="col-form-label" for="searchId">Buscar: </label>
+                <input type="text" id="searchId" v-model="searchTerm">
+                <button class="float-right btn btn-dark" v-on:click="toggleSortingOrder">Ordenar por precio</button>
+            </div>
             <div class="row">
                 <shopping-item
                         style="padding-top: 10px;"
@@ -25,66 +29,9 @@
         data: function () {
             return {
                 descending: false,
-                products: [
-                    {
-                        id: 1,
-                        name: "Peras",
-                        price: 2.57,
-                        photo: './pear.png',
-                        stock: 20
-                    },
-                    {
-                        id: 2,
-                        name: "Manzanas",
-                        price: 1.83,
-                        photo: './Single_apple.png',
-                        stock: 20
-                    },
-                    {
-                        id: 3,
-                        name: "Papayas",
-                        price: 2.54,
-                        photo: './papaya.png',
-                        stock: 20
-                    },
-                    {
-                        id: 4,
-                        name: "Aguacates",
-                        price: 3.54,
-                        photo: './aguacate.png',
-                        stock: 20
-                    },
-                    {
-                        id: 5,
-                        name: "Bananas",
-                        price: 1.25,
-                        photo: './bananas.png',
-                        stock: 20
-                    },
-                    {
-                        id: 6,
-                        name: "Verdes",
-                        price: 1.85,
-                        photo: './verde.png',
-                        stock: 20
-                    },
-                    {
-                        id: 7,
-                        name: "Maduros",
-                        price: 1.50,
-                        photo: './bananas.png',
-                        stock: 20
-                    },
-                    {
-                        id: 8,
-                        name: "Piñas",
-                        price: 3.50,
-                        photo: './pina.png',
-                        stock: 20
-                    },
-                ],
+                searchTerm: "",
+                products: [],
                 userCart: [
-
                 ],
             }
         },
@@ -99,12 +46,22 @@
                 } else {
                     this.products.sort((a, b) => a.price - b.price);
                 }
+            },
+            fetchProducts: async function(){
+                let reply = await fetch("./data.json").then(function(response) {
+                    return response.json()
+                });
+                this.products = reply;
+
             }
         },
         computed: {
             getSearchTerm: function(term) {
                 return this.products.filter((product) => product.name.includes(term));
             },
+        },
+        mounted: function() {
+            this.fetchProducts();
         }
     }
 </script>
