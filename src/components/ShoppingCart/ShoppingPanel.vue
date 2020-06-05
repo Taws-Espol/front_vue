@@ -12,13 +12,13 @@
                 products: [
                     {
                         name: "Peras",
-                        price: 2.54,
+                        price: 2.57,
                         photo: './Single_apple.png',
                         stock: 20
                     },
                     {
                         name: "Manzanas",
-                        price: 2.54,
+                        price: 1.83,
                         photo: './Single_apple.png',
                         stock: 20
                     },
@@ -30,31 +30,31 @@
                     },
                     {
                         name: "Aguacates",
-                        price: 2.54,
+                        price: 3.54,
                         photo: './Single_apple.png',
                         stock: 20
                     },
                     {
                         name: "Bananas",
-                        price: 2.54,
+                        price: 1.25,
                         photo: './Single_apple.png',
                         stock: 20
                     },
                     {
                         name: "Verdes",
-                        price: 2.54,
+                        price: 1.85,
                         photo: './Single_apple.png',
                         stock: 20
                     },
                     {
                         name: "Maduros",
-                        price: 2.54,
+                        price: 1.50,
                         photo: './Single_apple.png',
                         stock: 20
                     },
                     {
                         name: "Piñas",
-                        price: 2.54,
+                        price: 3.50,
                         photo: './Single_apple.png',
                         stock: 20
                     },
