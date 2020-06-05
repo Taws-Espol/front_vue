@@ -48,11 +48,9 @@
                 }
             },
             fetchProducts: async function(){
-                let reply = await fetch("./data.json").then(function(response) {
+                this.products = await fetch("./data.json").then(function (response) {
                     return response.json()
                 });
-                this.products = reply;
-
             }
         },
         computed: {
