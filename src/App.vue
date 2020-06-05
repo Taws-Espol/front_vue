@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <search-component></search-component>
+    <shopping-panel></shopping-panel>
   </div>
 </template>
 
 <script>
-import SearchComponent from './components/SearchComponent.vue'
+import ShoppingPanel from './components/ShoppingCart/ShoppingPanel.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchComponent
+    ShoppingPanel
   }
 }
 </script>
