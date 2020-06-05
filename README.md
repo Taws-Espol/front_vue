@@ -4,6 +4,8 @@
 [Vue.js slides](https://docs.google.com/presentation/d/1lS01zFobFUxhbBVX3K32kMMyOG0c68f8QnjcRkMttxs/edit?usp=sharing)
 
 
+[Vue.js Part 2 slides](https://docs.google.com/presentation/d/1-R4VJiCnZvvaq7Wyva0FlZkdlQk6yHrAMYJLOgUO-YI/edit?usp=sharing)
+
 ## Project setup
 ```
 npm install
