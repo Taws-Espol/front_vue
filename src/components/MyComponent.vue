@@ -16,9 +16,14 @@
             <h2 v-if="shouldShow">
             Ahora me ves
             </h2>
+            <h2 v-else-if="myText.length == 0">
+                El texto de abajo esta vacio
+            </h2>
             <h2 v-else>
                 Ahora no me ves
             </h2>
+            <!-- Ejemplo de v-show -->
+            <h2 v-show='shouldShow'>Ahora me ves</h2>
         </div>
         <h1>Vista de lista con v-for, con reactividad</h1>
         <div class="btn-holder">
@@ -29,10 +34,10 @@
             Remover un número a la lista
         </button>
         </div>
-        <div class="shorter">
-            <ul>
+        <div>
+            <ul class="list">
                 <li v-for="item in listItems" :key="item">
-                    {{item}}
+                    Elemento {{item}}
                 </li>
             </ul>
         </div>
@@ -44,8 +49,18 @@
             Felicitaciones a {{felicitarUser}}
         </h2>
         <div class="user-profiles">
-            <user-component v-for="user in fetchedUsers" v-on:felicitar="onFelicitar" v-bind:imgUrl="user.picture.large" v-bind:userModel="user" :key="user.email"></user-component>
+            <user-component 
+            v-for="user in fetchedUsers" 
+            v-on:felicitar="onFelicitar" 
+            v-bind:imgUrl="user.picture.large"
+            v-bind:userModel="user" 
+            :key="user.email"></user-component>
         </div>
+        <form >
+            <label for="nombre"></label>
+            <input type="text" id="nombre">
+            <button v-on:click.prevent="window.alert('Subido')">Subir datos</button>
+        </form>
     </div>
 </template>
 
@@ -53,6 +68,9 @@
 import UserComponent from './UserComponent.vue'
 export default {
     name: 'MyComponent',
+    mounted: function() {
+        console.log("Elemento montado");
+    },
     components: {
         UserComponent
     },
@@ -62,7 +80,7 @@ export default {
             myText: "Edita el cuadro de abajo para cambiar el texto!",
             shouldShow: false,
             listItems: [
-                1,2,3,4
+                1,3,4,2
             ],
             fetchedUsers: [],
             felicitarUser: null
@@ -77,7 +95,6 @@ export default {
         },
         fetchProfiles: async function () {
             let data = await fetch("https://randomuser.me/api?results=5").then((response) => response.json())
-            console.log(data);
             this.fetchedUsers = data['results'];
         },
         onFelicitar: function(event){
@@ -103,8 +120,11 @@ div {
     justify-content: space-evenly;
 
 }
-.shorter {
+.list {
     width: 20%;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
 }
 .user-profiles{
     display: flex;
